@@ -1,0 +1,39 @@
+body {
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.card {
+  height: 350px;
+  background: green;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card h3 {
+  transform: rotate(90deg);
+}
+
+.card.active h3 {
+  transform: rotate(0deg);
+}
+
+.card.active {
+  flex-grow: 1;
+}

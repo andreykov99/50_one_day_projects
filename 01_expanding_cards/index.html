@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Expanding cards</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card ">
+      <h3>card&nbsp1</h3>
+    </div>
+    <div class="card active">
+      <h3>card&nbsp2</h3>
+    </div>
+    <div class="card">
+      <h3>card&nbsp3</h3>
+    </div>
+    <div class="card">
+      <h3>card&nbsp4</h3>
+    </div>
+    <div class="card">
+      <h3>card&nbsp5</h3>
+    </div>
+    <div class="card">
+      <h3>card&nbsp6</h3>
+    </div>
+    <div class="card">
+      <h3>card&nbsp7</h3>
+    </div>
+  </div>
+</body>
+<script>
+  const cards = document.querySelectorAll('.card');
+  const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+
+  const cardClickHandle = (card) => {
+    if (!card.classList.contains('active')) {
+      const activeCard = document.querySelector('.active');
+      activeCard.classList.remove('active');
+      card.classList.add('active');
+    }
+  }
+
+  for (let i = 0; i < cards.length; i += 1) {
+    cards[i].addEventListener('click', () => cardClickHandle(cards[i]))
+    cards[i].style.backgroundColor = colors[i];
+  }
+
+  // this is wrong!!!! cards.forEach(item => item.onClick(() => alert('click')))
+</script>
+
+</html>
