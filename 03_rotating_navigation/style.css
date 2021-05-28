@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  font-family: Poppins, sans-serif;
+  background-color: #222222;
+  height: 100vh;
+}
+.wrapper {
+  transform-origin: 0 0;
+  background-color: #fafafa;
+  padding: 10px;
+  transition: transform 0.5s;
+}
+
+.wrapper.active {
+  transform: rotate(-30deg);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+}
+
+.menu_item {
+  list-style: none;
+}
+.menu_item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.fas {
+  margin-right: 10px;
+}
+
+.menubar {
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+  margin-bottom: 50px;
+}
+
+.menubar.active {
+  left: 0;
+}
+
+header {
+  position: fixed;
+}
+
+.burger {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ffffff;
+  content: "";
+}
+
+.burger span {
+  top: 11px;
+}
+
+.burger span::before {
+  top: 0;
+}
+
+.burger span::after {
+  bottom: 0;
+}
+
+.burger::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: pink;
+  width: 0px;
+  height: 0px;
+  border-bottom: 100px solid pink;
+  border-right: 100px solid pink;
+  border-bottom-right-radius: 100%;
+  z-index: -1;
+}
