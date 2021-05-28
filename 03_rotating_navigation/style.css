@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: Poppins, sans-serif;
+  background-color: #222222;
+  height: 100vh;
+}
+
+.wrapper {
+  transform-origin: 0 0;
+  background-color: #fafafa;
+  padding: 10px;
+  transition: transform 0.5s;
+}
+
+.wrapper.active {
+  transform: rotate(-20deg);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+}
+
+.fas {
+  margin-right: 10px;
+}
+
+.menu_item {
+  list-style: none;
+  line-height: 4.5;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+}
+
+.menu_item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.menubar {
+  left: -100%;
+  position: absolute;
+  bottom: 50px;
+  transition: 0.5s;
+}
+
+.menubar.active {
+  left: 0;
+}
+
+.menubar.active .menu_item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+header {
+  position: fixed;
+  z-index: 200;
+}
+
+.burger {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ffffff;
+  content: "";
+}
+
+.burger span {
+  top: 11px;
+}
+
+.burger span::before {
+  top: -6px;
+}
+
+.burger span::after {
+  bottom: -6px;
+}
+
+.burger.active span {
+  background: transparent;
+}
+
+.burger.active span::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+.burger.active span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: pink;
+  width: 0px;
+  height: 0px;
+  border-bottom: 85px solid pink;
+  border-right: 85px solid pink;
+  border-bottom-right-radius: 100%;
+  z-index: -1;
+}
