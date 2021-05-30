@@ -5,14 +5,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
 body {
   position: relative;
   font-family: Poppins, sans-serif;
   background-color: #222222;
   height: 100vh;
 }
-
 .wrapper {
   transform-origin: 0 0;
   background-color: #fafafa;
