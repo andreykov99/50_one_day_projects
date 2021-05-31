@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Blurry Loading</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="bg"><img src="./bg.jpg" alt="timeless tree"></div>
+    <div class="timer">
+      <h3>Loading</h3>
+    </div>
+  </div>
+</body>
+<script>
+  const img = document.querySelector('.bg > img');
+  const timer = document.querySelector('.timer > h3');
+  const timers = [];
+  for (let i = 0; i < 11; i += 1) {
+    timers[i] = setTimeout(() => {
+      i == 10 ? timer.style.display = "none" : timer.innerText = `Loading ${10 - i}`
+      img.style.filter = `blur(${10 - i}px)`
+    }, 400 * i
+
+    )
+  }
+</script>
+
+</html>
