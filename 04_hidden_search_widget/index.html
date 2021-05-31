@@ -10,13 +10,32 @@
 </head>
 
 <body>
-  <form action="#">
+  <form action="#" method="POST">
     <div class="widget">
-      <input type="text" name="search" id="search">
-      <input type="submit" value="">
+      <input class="searchText" type="text" name="search" id="search" placeholder="Search...">
+      <div class="searchBtn"><img src="./search.svg" alt="search"></div>
     </div>
   </form>
 
 </body>
+<script>
+  const searchBtn = document.querySelector('.searchBtn');
+  const searchText = document.querySelector('.searchText');
+  let searchStr = '';
+  searchBtn.addEventListener('click', () => {
+
+    if (searchBtn.classList.contains('active')) {
+      console.log('search ', searchStr);
+      searchStr = '';
+    }
+    searchBtn.classList.toggle('active')
+    searchText.classList.toggle('active')
+  })
+  searchText.addEventListener('change', (e) => {
+    searchStr = e.target.value;
+    e.target.value = '';
+  })
+
+</script>
 
 </html>
