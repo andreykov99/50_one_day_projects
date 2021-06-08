@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #7db9e8 0%, #1e5799 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wavyform {
+  display: block;
+  color: #fff;
+  border: #1e5799 solid 1px;
+  background-color: #3f4c6b;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #87e0fd;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+.btn {
+  display: block;
+  cursor: pointer;
+  background-color: #87e0fd;
+  outline: none;
+  width: 100%;
+  border: 0px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.inputBx {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.inputBx input {
+  position: relative;
+  width: 100%;
+  outline: none;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 1.25rem;
+  transition: border 0.5s;
+  z-index: 2;
+}
+
+.inputBx input:focus {
+  border-bottom: 1px solid #fff;
+}
+
+.wavytext {
+  color: #f0f0f0;
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.25rem;
+  z-index: 1;
+}
+
+.wavytext span {
+  display: inline-block;
+  transition-duration: calc(0.15s * var(--i));
+  transition-property: transform;
+}
+
+.wavytext.active span {
+  transform: translateY(-2.5rem);
+}
